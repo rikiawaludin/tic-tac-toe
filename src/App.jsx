@@ -1,10 +1,17 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 
 function Square() {
-  return <button className="square">X</button>
+
+  const [value, setValue] = useState('');
+
+  function handleClick() {
+    setValue('X');
+  }
+
+  return <button className="square" onClick={handleClick}>{value}</button>
 }
 
-function App() {
+export default function Board() {
   return (
     <div className="board">
       <Square/>
@@ -19,5 +26,3 @@ function App() {
     </div>
   )
 }
-
-export default App
